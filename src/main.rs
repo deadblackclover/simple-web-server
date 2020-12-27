@@ -1,13 +1,41 @@
-use config::{Config, File};
-
+use clap::{App, Arg, SubCommand};
 use gotham::handler::assets::FileOptions;
 use gotham::router::builder::*;
 
 fn main() {
-    let mut s = Config::new();
-    s.merge(File::with_name("config")).unwrap();
+    let matches = App::new("wserver")
+        .version("0.1.0")
+        .author("DEADBLACKCLOVER <deadblackclover@protonmail.com>")
+        .about("Simple web server powered by Rust")
+        .arg(
+            Arg::with_name("path")
+                .short("c")
+                .long("path")
+                .value_name("PATH")
+                .help("File path")
+                .takes_value(true),
+        )
+        .arg(
+            Arg::with_name("address")
+                .short("a")
+                .long("address")
+                .value_name("IP")
+                .help("Server IP address")
+                .takes_value(true),
+        )
+        .arg(
+            Arg::with_name("port")
+                .short("p")
+                .long("port")
+                .value_name("PORT")
+                .help("Server port")
+                .takes_value(true),
+        )
+        .get_matches();
 
-    let path = s.get::<String>("path").unwrap();
+    let path = matches.value_of("path").unwrap_or("./");
+    let ip = matches.value_of("address").unwrap_or("127.0.0.1");
+    let port = matches.value_of("port").unwrap_or("8080");
 
     let router = build_simple_router(|route| {
         route.get("/*").to_dir(
@@ -17,9 +45,6 @@ fn main() {
                 .build(),
         );
     });
-
-    let ip = s.get::<String>("ip").unwrap();
-    let port = s.get::<String>("port").unwrap();
 
     let addr = [ip, port].join(":");
     println!("Listening for requests at http://{}", addr);

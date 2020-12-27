@@ -1,5 +1,5 @@
 [package]
-name = "simple-web-server"
+name = "wserver"
 version = "0.1.0"
 authors = ["DEADBLACKCLOVER <deadblackclover@protonmail.com>"]
 description = "Simple web server powered by Rust"
