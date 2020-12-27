@@ -4,6 +4,10 @@
 
 Simple web server powered by Rust
 
+## Install
+
+If you have Rust: `cargo install wserver`
+
 ## Run
 ```bash
 ./wserver
