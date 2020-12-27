@@ -43,6 +43,7 @@ fn main() {
     let path = matches.value_of("path").unwrap_or("./");
     let ip = matches.value_of("address").unwrap_or("127.0.0.1");
     let port = matches.value_of("port").unwrap_or("8080");
+    let threads = matches.value_of("threads").unwrap_or("1");
 
     let index = if path.ends_with("/") {
         format!("{}index.html", path)
@@ -64,5 +65,9 @@ fn main() {
     let addr = [ip, port].join(":");
     println!("Listening for requests at http://{}", addr);
 
-    gotham::start_with_num_threads(addr, router, 1)
+    gotham::start_with_num_threads(
+        addr,
+        router,
+        threads.parse::<usize>().expect("Parsing threads error!"),
+    )
 }
