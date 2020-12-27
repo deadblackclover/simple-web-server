@@ -1,17 +1,10 @@
 # simple-web-server
-
 ![crates.io](https://img.shields.io/crates/v/wserver.svg)
 
 Simple web server powered by Rust
 
 ## Install
-
 If you have Rust: `cargo install wserver`
-
-## Run
-```bash
-./wserver
-```
 
 ## Usage
 ```bash
