@@ -1,5 +1,7 @@
 # simple-web-server
 
+![crates.io](https://img.shields.io/crates/v/wserver.svg)
+
 Simple web server powered by Rust
 
 ## Run
