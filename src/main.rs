@@ -36,7 +36,15 @@ fn main() {
     let ip = matches.value_of("address").unwrap_or("127.0.0.1");
     let port = matches.value_of("port").unwrap_or("8080");
 
+    let index = if path.ends_with("/") {
+        format!("{}index.html", path)
+    } else {
+        format!("{}/index.html", path)
+    };
+
     let router = build_simple_router(|route| {
+        route.get("/").to_file(&index);
+
         route.get("/*").to_dir(
             FileOptions::new(&path)
                 .with_cache_control("no-cache")
