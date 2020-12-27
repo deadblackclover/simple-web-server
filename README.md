@@ -3,18 +3,25 @@
 Simple web server powered by Rust
 
 ## Run
-```sh
-cargo run
+```bash
+./wserver
 ```
 
-## config.toml
+## Usage
+```bash
+wserver 0.1.0
+DEADBLACKCLOVER <deadblackclover@protonmail.com>
+Simple web server powered by Rust
 
-```toml
-ip = "127.0.0.1"
-port = "8080"
-path = "/var/www"
+USAGE:
+    wserver [OPTIONS]
+
+FLAGS:
+    -h, --help       Prints help information
+    -V, --version    Prints version information
+
+OPTIONS:
+    -a, --address <IP>    Server IP address
+        --path <PATH>     File path
+    -p, --port <PORT>     Server port
 ```
-
-## License
-
-GNU General Public License v3.0

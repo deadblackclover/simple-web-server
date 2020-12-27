@@ -1,4 +1,4 @@
-use clap::{App, Arg, SubCommand};
+use clap::{App, Arg};
 use gotham::handler::assets::FileOptions;
 use gotham::router::builder::*;
 
@@ -9,7 +9,6 @@ fn main() {
         .about("Simple web server powered by Rust")
         .arg(
             Arg::with_name("path")
-                .short("c")
                 .long("path")
                 .value_name("PATH")
                 .help("File path")
