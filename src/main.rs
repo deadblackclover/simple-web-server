@@ -4,7 +4,7 @@ use gotham::router::builder::*;
 
 fn main() {
     let matches = App::new("wserver")
-        .version("0.1.0")
+        .version("0.1.2")
         .author("DEADBLACKCLOVER <deadblackclover@protonmail.com>")
         .about("Simple web server powered by Rust")
         .arg(
@@ -28,6 +28,14 @@ fn main() {
                 .long("port")
                 .value_name("PORT")
                 .help("Server port")
+                .takes_value(true),
+        )
+        .arg(
+            Arg::with_name("threads")
+                .short("t")
+                .long("threads")
+                .value_name("NUMBER")
+                .help("Number of threads")
                 .takes_value(true),
         )
         .get_matches();
@@ -56,5 +64,5 @@ fn main() {
     let addr = [ip, port].join(":");
     println!("Listening for requests at http://{}", addr);
 
-    gotham::start(addr, router)
+    gotham::start_with_num_threads(addr, router, 1)
 }

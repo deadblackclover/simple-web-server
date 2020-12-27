@@ -9,7 +9,7 @@ Simple web server powered by Rust
 
 ## Usage
 ```bash
-wserver 0.1.0
+wserver 0.1.2
 DEADBLACKCLOVER <deadblackclover@protonmail.com>
 Simple web server powered by Rust
 
@@ -21,7 +21,8 @@ FLAGS:
     -V, --version    Prints version information
 
 OPTIONS:
-    -a, --address <IP>    Server IP address
-        --path <PATH>     File path
-    -p, --port <PORT>     Server port
+    -a, --address <IP>        Server IP address
+        --path <PATH>         File path
+    -p, --port <PORT>         Server port
+    -t, --threads <NUMBER>    Number of threads
 ```
