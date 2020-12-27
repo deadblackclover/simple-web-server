@@ -2,8 +2,16 @@
 name = "simple-web-server"
 version = "0.1.0"
 authors = ["DEADBLACKCLOVER <deadblackclover@protonmail.com>"]
+description = "Simple web server powered by Rust"
 edition = "2018"
+license = "GPL-3.0"
+readme = "README.md"
+homepage = "https://github.com/deadblackclover/simple-web-server"
+repository = "https://github.com/deadblackclover/simple-web-server"
+keywords = ["web", "server", "webserver"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-gotham = "0.3.0"
-config = "0.9.2"
+clap = "2.33.3"
+gotham = "0.5.0"
