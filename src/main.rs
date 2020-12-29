@@ -1,6 +1,26 @@
 use clap::{App, Arg};
 use gotham::handler::assets::FileOptions;
+use gotham::helpers::http::response::create_empty_response;
+use gotham::hyper::{Body, HeaderMap, Method, Response, StatusCode, Uri, Version};
 use gotham::router::builder::*;
+use gotham::state::{FromState, State};
+
+fn log_request(state: &State) {
+    let method = Method::borrow_from(state);
+    let uri = Uri::borrow_from(state);
+    let http_version = Version::borrow_from(state);
+    let headers = HeaderMap::borrow_from(state);
+
+    println!("\n[{:?}] {:?}", method, uri);
+    println!("{:?}", http_version);
+    println!("Headers: {:?}", headers);
+}
+
+fn request_handler(state: State) -> (State, Response<Body>) {
+    log_request(&state);
+    let res = create_empty_response(&state, StatusCode::OK);
+    (state, res)
+}
 
 fn main() {
     let matches = App::new("wserver")
@@ -60,6 +80,9 @@ fn main() {
                 .with_gzip(true)
                 .build(),
         );
+
+        route.post("/").to(request_handler);
+        route.post("/*").to(request_handler);
     });
 
     let addr = [ip, port].join(":");
