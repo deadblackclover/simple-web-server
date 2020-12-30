@@ -58,6 +58,12 @@ fn main() {
                 .help("Number of threads")
                 .takes_value(true),
         )
+        .arg(
+            Arg::with_name("logs")
+                .short("l")
+                .long("logs")
+                .help("Number of threads"),
+        )
         .get_matches();
 
     let path = matches.value_of("path").unwrap_or("./");
@@ -81,8 +87,25 @@ fn main() {
                 .build(),
         );
 
-        route.post("/").to(request_handler);
-        route.post("/*").to(request_handler);
+        if matches.occurrences_of("logs") > 0 {
+            route.delete("/").to(request_handler);
+            route.delete("/*").to(request_handler);
+
+            route.head("/").to(request_handler);
+            route.head("/*").to(request_handler);
+
+            route.options("/").to(request_handler);
+            route.options("/*").to(request_handler);
+
+            route.patch("/").to(request_handler);
+            route.patch("/*").to(request_handler);
+
+            route.post("/").to(request_handler);
+            route.post("/*").to(request_handler);
+
+            route.put("/").to(request_handler);
+            route.put("/*").to(request_handler);
+        }
     });
 
     let addr = [ip, port].join(":");
