@@ -62,7 +62,7 @@ fn main() {
             Arg::with_name("logs")
                 .short("l")
                 .long("logs")
-                .help("Number of threads"),
+                .help("Logging requests"),
         )
         .get_matches();
 

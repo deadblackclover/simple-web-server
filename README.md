@@ -13,10 +13,11 @@ DEADBLACKCLOVER <deadblackclover@protonmail.com>
 Simple web server powered by Rust
 
 USAGE:
-    wserver [OPTIONS]
+    wserver [FLAGS] [OPTIONS]
 
 FLAGS:
     -h, --help       Prints help information
+    -l, --logs       Logging requests
     -V, --version    Prints version information
 
 OPTIONS:
