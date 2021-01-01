@@ -15,3 +15,16 @@ keywords = ["web", "server", "webserver"]
 [dependencies]
 clap = "2.33.3"
 gotham = "0.5.0"
+
+[package.metadata.deb]
+maintainer = "DEADBLACKCLOVER <deadblackclover@protonmail.com>"
+copyright = "2020, DEADBLACKCLOVER <deadblackclover@protonmail.com>"
+license-file = ["LICENSE", "0"]
+extended-description = "Simple web server powered by Rust"
+depends = "$auto"
+section = "web"
+priority = "optional"
+assets = [
+    ["target/release/wserver", "usr/bin/", "755"],
+    ["README.md", "usr/share/doc/wserver/README", "644"],
+]
