@@ -24,7 +24,7 @@ fn request_handler(state: State) -> (State, Response<Body>) {
 
 fn main() {
     let matches = App::new("wserver")
-        .version("0.1.2")
+        .version("0.1.3")
         .author("DEADBLACKCLOVER <deadblackclover@protonmail.com>")
         .about("Simple web server powered by Rust")
         .arg(

@@ -8,7 +8,7 @@ If you have Rust: `cargo install wserver`
 
 ## Usage
 ```bash
-wserver 0.1.2
+wserver 0.1.3
 DEADBLACKCLOVER <deadblackclover@protonmail.com>
 Simple web server powered by Rust
 
