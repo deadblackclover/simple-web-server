@@ -5,6 +5,7 @@ Simple web server powered by Rust
 
 ## Install
 If you have Rust: `cargo install wserver`
+If you have Debian/Ubuntu: [Releases](https://github.com/deadblackclover/simple-web-server/releases)
 
 ## Usage
 ```bash
