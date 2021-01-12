@@ -14,6 +14,7 @@ keywords = ["web", "server", "webserver"]
 
 [dependencies]
 clap = "2.33.3"
+futures = "0.3.1"
 gotham = "0.5.0"
 
 [package.metadata.deb]
