@@ -37,7 +37,7 @@ fn request_handler(mut state: State) -> Pin<Box<HandlerFuture>> {
 
 fn main() {
     let matches = App::new("wserver")
-        .version("0.1.4")
+        .version("0.1.5")
         .author("DEADBLACKCLOVER <deadblackclover@protonmail.com>")
         .about("Simple web server powered by Rust")
         .arg(

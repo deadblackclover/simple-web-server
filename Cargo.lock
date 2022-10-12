@@ -1225,7 +1225,7 @@ checksum = "c811ca4a8c853ef420abd8592ba53ddbbac90410fab6903b3e79972a631f7680"
 
 [[package]]
 name = "wserver"
-version = "0.1.4"
+version = "0.1.5"
 dependencies = [
  "clap",
  "futures",

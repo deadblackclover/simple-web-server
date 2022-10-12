@@ -10,7 +10,7 @@ If you have Debian/Ubuntu: [Releases](https://github.com/deadblackclover/simple-
 
 ## Usage
 ```bash
-wserver 0.1.4
+wserver 0.1.5
 DEADBLACKCLOVER <deadblackclover@protonmail.com>
 Simple web server powered by Rust
 

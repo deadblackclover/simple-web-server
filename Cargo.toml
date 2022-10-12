@@ -1,6 +1,6 @@
 [package]
 name = "wserver"
-version = "0.1.4"
+version = "0.1.5"
 authors = ["DEADBLACKCLOVER <deadblackclover@protonmail.com>"]
 description = "Simple web server powered by Rust"
 edition = "2018"
