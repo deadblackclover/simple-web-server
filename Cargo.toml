@@ -15,7 +15,7 @@ keywords = ["web", "server", "webserver"]
 [dependencies]
 clap = "2.34.0"
 futures = "0.3.21"
-gotham = "0.6.0"
+gotham = "0.7.1"
 
 [package.metadata.deb]
 maintainer = "DEADBLACKCLOVER <deadblackclover@protonmail.com>"

@@ -1,6 +1,6 @@
 use clap::{App, Arg};
 use futures::prelude::*;
-use gotham::handler::assets::FileOptions;
+use gotham::handler::FileOptions;
 use gotham::handler::HandlerFuture;
 use gotham::helpers::http::response::create_empty_response;
 use gotham::hyper::{body, Body, HeaderMap, Method, StatusCode, Uri, Version};
@@ -129,4 +129,5 @@ fn main() {
         router,
         threads.parse::<usize>().expect("Parsing threads error!"),
     )
+    .unwrap();
 }
